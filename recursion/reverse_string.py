@@ -1,3 +1,4 @@
+import re 
 
 def reverse_string(string):
     if len(string) == 1: return string
@@ -9,3 +10,14 @@ def reverse_string(string):
 string = reverse_string('hello world')
 print 'string: {0}'.format(string)
 
+
+def checkForPalindrome(string):
+    removeSpace = lambda string: re.sub(r'\,,\.,\?,\s', '', string)
+
+    return True if removeSpace(reverse_string(string)) == removeSpace(string) else False
+
+a = checkForPalindrome('lol')
+b = checkForPalindrome('meow')
+
+print 'a: {0}'.format(a)
+print 'b: {0}'.format(b)
