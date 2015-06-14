@@ -1,3 +1,4 @@
+import sys
 
 start = [x for x in reversed(range(3))];
 start.pop()
@@ -19,7 +20,6 @@ def moveDisk(start_pole, temp_pole, dest_pole):
 
 moveDisk(start, temp, dest)
 
-
 print '\n'
 print 'end'
 print 'start: {0}'.format(start)
@@ -38,5 +38,9 @@ def hanoi(pegs, start, target, n):
         hanoi(pegs, start, target, 1)
         hanoi(pegs, aux, target, n-1)
 
-hanoi([[4,3,2,1], [], []],0, 2, 4)
+
+rangeNum = sys.argv[0]
+start = [x for x in reversed(range(sys.argv[0]))];
+start.pop()
+hanoi([[], [], []],0, 2, 4)
 
