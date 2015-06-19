@@ -4,11 +4,11 @@ from sys import argv
 def timmy(fn):
     def decorator(*args):
         start_time = default_timer()
-        print 'args: {0}'.format(args)
-        fn(*args)
+        result = fn(*args)
         end_time = default_timer()
         result_time = end_time - start_time
         print 'result_time: {0}'.format(result_time)
+        return result
 
     return decorator
 
