@@ -1,6 +1,6 @@
 from collections import deque
 
-def check_balance(string):
+def parensBalanceCheck(string):
     stack_level = 0;
     stack = deque([])
     starting_braces = { "(": ")", "{": "}", "[": "]"}
@@ -29,28 +29,28 @@ def check_balance(string):
 
 def test_answer():
     string = "(){}"
-    assert check_balance(string) == True
+    assert parensBalanceCheck(string) == True
 
     string = ")(){}"
-    assert check_balance(string) == False
+    assert parensBalanceCheck(string) == False
 
     string = "({[]})"
-    assert check_balance(string) == True
+    assert parensBalanceCheck(string) == True
 
     string = "({([])})"
-    assert check_balance(string) == True
+    assert parensBalanceCheck(string) == True
 
-    string = "({([])}) () ({([])})"
-    assert check_balance(string) == True
+    string = "({([])}) () ({ (){}([])})"
+    assert parensBalanceCheck(string) == True
 
     string = "({[()}]) ({[]})"
-    assert check_balance(string) == False
+    assert parensBalanceCheck(string) == False
 
     string = "({[()}])"
-    assert check_balance(string) == False
+    assert parensBalanceCheck(string) == False
 
     string = "({[}])"
-    assert check_balance(string) == False
+    assert parensBalanceCheck(string) == False
 
 
 
