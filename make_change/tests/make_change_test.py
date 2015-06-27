@@ -1,7 +1,7 @@
 import sys, os
 sys.path.insert(0, os.getcwd())
-from make_change import give_change, init_change
-from change_helpers import generateExpectedDollarsCents
+from make_change import give_change, init_change, compute_change_for_dollars
+from change_helpers import generate_expected_dollars_cents
 
 coins   = [25, 10, 5, 1]
 dollars = [100, 50, 20, 10, 5, 1]
@@ -23,12 +23,14 @@ def test_init_change():
 
 
 
-def test_compute_change_for_dollars():
-    bucks = 10.42
+def test_generate_expected_dollars_cents():
+    dollars = { 20: 5, 50: 1}
+    cents   = { 10: 1, 5: 1, 1: 1}
 
-    expected_dollars = {10: 1}
-    expected_cents   = {10: 4, 1: 1}
+    expected_results = { 'dollars': { 100:0, 50:1, 20:5, 10:0, 5:0, 1:0 },
+                           'cents': {  25:0, 10:1,  5:1, 1:1 }}
 
-    assert compute_change_for_dollars(10) == generateExpectedDollarsCents(expected_dollars, expected_cents)
+    assert generate_expected_dollars_cents(dollars, cents) == expected_results
+
 
 
