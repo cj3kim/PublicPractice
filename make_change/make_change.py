@@ -1,3 +1,23 @@
+
+def compute_change_for_dollars(total_amount):
+    "We will assume compute_change_for_dollars is a float for now"
+    DOLLAR_UNITS = [100, 50, 20, 10, 5, 1]
+    COIN_UNITS   = [25, 10, 5, 1]
+
+    toIntRatio = 100
+
+    #overshadow total_amount through copy by sharing.
+    total_amount = int(total_amount*toIntRatio) 
+    dollars = total_amount / toIntRatio
+    cents   = total_amount % toIntRatio
+
+    return {
+        'dollars': give_change(dollars, DOLLAR_UNITS)
+        , 'cents': give_change(cents, COIN_UNITS)
+    }
+
+
+
 #give_change :: Int -> [Int] -> {Int}
 def give_change(n, currency_units):
     "Takes n units of currency and gives changes according to currency_units. Greedy algorithm is used."
