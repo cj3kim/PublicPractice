@@ -20,6 +20,28 @@ def test_init_change():
     assert init_change(coins)   == {25: 0, 10:0, 5: 0, 1: 0}
     assert init_change(dollars) == {100: 0, 50:0, 20: 0, 10:0, 5: 0, 1: 0}
 
+def test_compute_change_for_dollars():
+    bucks = 10.42
+    expected_dollars = {10: 1}
+    expected_cents   = {25: 1, 10:1, 5: 1, 1: 2}
+
+    assert compute_change_for_dollars(bucks) == generate_expected_dollars_cents(expected_dollars, expected_cents)
+
+    bucks = 1578.89
+    expected_dollars = {100: 15, 50: 1, 20: 1, 5: 1, 1: 3}
+    expected_cents   = {25: 3, 10:1, 5: 0, 1: 4}
+
+    assert compute_change_for_dollars(bucks) == generate_expected_dollars_cents(expected_dollars, expected_cents)
+
+
+    bucks = 23401578.89
+    expected_dollars = {100: 234015, 50: 1, 20: 1, 5: 1, 1: 3}
+    expected_cents   = {25: 3, 10:1, 5: 0, 1: 4}
+
+    assert compute_change_for_dollars(bucks) == generate_expected_dollars_cents(expected_dollars, expected_cents)
+
+
+
 
 
 
