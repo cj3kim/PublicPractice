@@ -1,7 +1,6 @@
-
 #give_change :: Int -> [Int] -> {Int}
 def give_change(n, currency_units):
-    "Takes n units of currency and gives changes according to currency_units"
+    "Takes n units of currency and gives changes according to currency_units. Greedy algorithm is used."
     change = init_change(currency_units)
     last_index_currency_units = len(currency_units) - 1
 
@@ -24,5 +23,4 @@ def init_change(currency_units):
     for v in currency_units:
         change[v] = 0
     return change
-
 
