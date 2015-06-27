@@ -8,7 +8,6 @@ dollars = [100, 50, 20, 10, 5, 1]
 def test_give_change():
     cents = 93
     change_1 = give_change(cents, coins)
-
     assert change_1 == {25: 3, 10:1, 5: 1, 1: 3}
 
     bucks = 135

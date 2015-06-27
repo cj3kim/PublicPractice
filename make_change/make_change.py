@@ -1,6 +1,7 @@
 
 #give_change :: Int -> [Int] -> {Int}
 def give_change(n, currency_units):
+    "Takes n units of currency and gives changes according to currency_units"
     change = init_change(currency_units)
     last_index_currency_units = len(currency_units) - 1
 
@@ -17,6 +18,8 @@ def give_change(n, currency_units):
 
 # init_change :: [Int] -> {Int}
 def init_change(currency_units):
+    "Initializes a hash of currency_units with counters set to 0"
+
     change = {}
     for v in currency_units:
         change[v] = 0
