@@ -33,17 +33,11 @@ def test_compute_change_for_dollars():
 
     assert compute_change_for_dollars(bucks) == generate_expected_dollars_cents(expected_dollars, expected_cents)
 
-
     bucks = 23401578.89
     expected_dollars = {100: 234015, 50: 1, 20: 1, 5: 1, 1: 3}
     expected_cents   = {25: 3, 10:1, 5: 0, 1: 4}
 
     assert compute_change_for_dollars(bucks) == generate_expected_dollars_cents(expected_dollars, expected_cents)
-
-
-
-
-
 
 def test_generate_expected_dollars_cents():
     dollars = { 20: 5, 50: 1}

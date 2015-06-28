@@ -20,6 +20,7 @@ def compute_change_for_dollars(total_amount):
 
 #give_change :: Int -> [Int] -> {Int}
 def give_change(n, currency_units):
+    if n == 0: return None
     "Takes n units of currency and gives changes according to currency_units. Greedy algorithm is used."
     change = init_change(currency_units)
     last_index_currency_units = len(currency_units) - 1
