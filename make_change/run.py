@@ -1,12 +1,17 @@
 from make_change import compute_change_for_dollars
 from string_currency import currency_to_string, convert_bills_to_sentence, convert_unit_counter_to_words, print_change
 
-print """ Welcome to your bank!"""
+print "Welcome to your bank!"
 continue_session = True
 
 while (continue_session):
     user_input = raw_input("Please the amount you would like to withdraw in the form $100.23 or $100. We will then give you change. \n")
-    amount = float(user_input)
+
+    try: amount = float(user_input)
+    except ValueError:
+        print "Not a valid number. Please enter again"
+        continue
+
     result = compute_change_for_dollars(amount)
 
     for k,v in result.iteritems():
