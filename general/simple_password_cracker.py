@@ -5,8 +5,7 @@ from itertools import product
 LOWERCASE_A_TO_Z = [i for i in string.lowercase[:26]]
 
 def crack_it(unknown_string, password_length):
-    result = [LOWERCASE_A_TO_Z for i in range(1,password_length+1)]
-    g = product(*result)
+    g = product(LOWERCASE_A_TO_Z, repeat=password_length)
 
     for password in g:
         string_password = "".join(password)
