@@ -19,8 +19,14 @@ function rectangular_love(rectangleA, rectangleB) {
                                  y: rectangleA.bottomY + rectangleA.height }
 
   var difference = computeSlope(intersectionStartPoint, intersectionEndPoint)
+  var dx = difference.dx;
+  var dy = difference.dy;
+
+  if ( dx <= 0 || dy <= 0)  {
+    return null
+  }
   var intersectionRectangle = createRectangle( intersectionStartPoint.x, intersectionStartPoint.y,
-                                               difference.dx, difference.dy)
+                                               dx, dy)
   return intersectionRectangle;
 }
 
