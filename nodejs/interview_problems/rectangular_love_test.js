@@ -33,8 +33,8 @@ describe("rectangular_love", function() {
 
         it("should return null", function () {
             var result = rectangular_love(rectangleA, rectangleB)
-            var expectedResult = null
-            assert.equal(result, expectedResult)
+            var expectedResult = createRectangle(null, null, null, null)
+            assert.deepEqual(result, expectedResult)
         })
     });
 
