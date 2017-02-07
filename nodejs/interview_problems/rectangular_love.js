@@ -13,8 +13,7 @@ function computeSlope(pointA,pointB) {
 
 function rectangular_love(rectangleA, rectangleB) {
 
-  var intersectionStartPoint = { x: rectangleB.leftX,
-    y: rectangleB.bottomY }
+  var intersectionStartPoint = { x: rectangleB.leftX, y: rectangleB.bottomY }
   var intersectionEndPoint   = { x: rectangleA.leftX   + rectangleA.width,
     y: rectangleA.bottomY + rectangleA.height }
 
