@@ -49,7 +49,6 @@ def test_n3():
 
     stringA = "hello, my name is chris"
     stringB = "my name is Andrew, hello"
- 
     assert n3_substring_matcher(stringA, stringB) == "my name is "
 
 

@@ -7,12 +7,15 @@ class Node {
   }
 
   addNumber (number) {
-    if (isNaN(this.nodeValue)) {
+    let isNumber = isNaN(this.nodeValue)
+    if (isNumber) {
       this.nodeValue = number
     } else {
+
       let key = number <= this.nodeValue ? "left" : "right"
+
       if (this[key]) {
-        this[key].addNumber(number)
+        this[key].addNumber(this, number)
       } else {
         this[key] = new Node({"nodeValue": number})
       }
